@@ -19,4 +19,14 @@ public class GymCabinetServiceImp implements GymCabinetService {
 
         return gymCabinetMapper.selectList(null);
     }
+
+    @Override
+    public void inserGymCabinet(gymCabinet gymCabinet) {
+
+    }
+
+    @Override
+    public void deleteGymCabinet(Integer id) {
+
+    }
 }

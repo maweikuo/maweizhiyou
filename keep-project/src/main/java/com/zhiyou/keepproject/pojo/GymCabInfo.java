@@ -11,7 +11,7 @@ import java.sql.Date;
 
 @Data
 @ToString
-@TableName(value = "Gym_cabInfo")
+@TableName(value = "Gym_cab_info")
 public class GymCabInfo {
     @TableId(value = "id", type = IdType.AUTO)
     private  Integer id;

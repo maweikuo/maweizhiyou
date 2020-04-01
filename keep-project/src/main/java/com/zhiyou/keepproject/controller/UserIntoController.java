@@ -15,6 +15,7 @@ public class UserIntoController {
     //会员进场
     @RequestMapping(value = "insert")
     public void  m1(UserInto userInto){
+        //TODO 会员表没写
         userIntoService.insertUserInto(userInto);
     }
     //会员离场

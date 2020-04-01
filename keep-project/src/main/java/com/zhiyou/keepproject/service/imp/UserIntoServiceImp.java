@@ -15,14 +15,19 @@ public class UserIntoServiceImp implements UserIntoService {
 
     @Override
     public void updateUserInto(UserInto userInto) {
-        userIntoMapper.updateUserInto(userInto);
+        Date time1= new java.sql.Date(new java.util.Date().getTime());
+        userInto.setGotoTime((java.sql.Date) time1);
+        userInto.setIntoStatic("出场");
+        userIntoMapper.updateById(userInto);
     }
 
     @Override
     public void insertUserInto(UserInto userInto) {
         Date date = new Date();
-        String format = String.format("18", date);
-        userInto.setIntoNumber(Integer.valueOf(format));
-        userIntoMapper.insertUserInto(userInto);
+        userInto.setIntoNumber(Integer.valueOf((int) date.getTime()));
+        Date time1= new java.sql.Date(new java.util.Date().getTime());
+        userInto.setIntoTime((java.sql.Date) time1);
+        userInto.setIntoStatic("进场");
+        userIntoMapper.insert(userInto);
     }
 }

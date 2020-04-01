@@ -16,7 +16,7 @@ import java.util.List;
 public class GymCabinetController {
     @Autowired
     private GymCabinetService gymCabinetService;
-
+    //查询所有租柜
     @GetMapping(value = "gyms")
     public List<gymCabinet> m1(){
         return gymCabinetService.selectAll();

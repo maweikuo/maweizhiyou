@@ -1,5 +1,6 @@
 package com.zhiyou.keepproject.controller;
 
+import com.zhiyou.keepproject.entity.ResponseData;
 import com.zhiyou.keepproject.pojo.Region;
 import com.zhiyou.keepproject.service.RegionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,11 @@ public class RegionController {
     @RequestMapping("insert")
     public  void m1(Region region){
         regionService.insertRegion(region);
+    }
+    //查询所有前台
+    @RequestMapping("select")
+    public ResponseData m2(){
+        return  regionService.selectAllRegion();
     }
 
 }
