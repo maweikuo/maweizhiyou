@@ -15,8 +15,8 @@ public class personalTrainerController {
     private personalTrainerService personalTrainerService;
     //查询所有教练
     @RequestMapping(value = "select")
-    public List<personalTrainer> m1(){
-        return  personalTrainerService.selectAllpersonalTrainer();
+    public List<personalTrainer> m1(Integer page){
+        return  personalTrainerService.selectAllpersonalTrainer(page);
     }
     //修改教练信息
     @RequestMapping(value = "update")

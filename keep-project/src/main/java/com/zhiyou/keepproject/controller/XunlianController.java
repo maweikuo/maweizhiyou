@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class XunlianController {
     @Autowired
     private XunlianService xunlianService;
-    //给会员添加充值添加记录
+    //给会员训练添加记录
     @RequestMapping("insert")
     public void m1(Xunlian xunlian){
         xunlianService.insertXunlian(xunlian);

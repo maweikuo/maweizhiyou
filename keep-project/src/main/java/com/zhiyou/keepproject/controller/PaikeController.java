@@ -1,5 +1,6 @@
 package com.zhiyou.keepproject.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zhiyou.keepproject.pojo.Paike;
 import com.zhiyou.keepproject.service.PaikeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,8 @@ public class PaikeController {
     //查询所有排课
     @RequestMapping(value = "select")
     public List<Paike> m1(){
+
+
         return  paikeService.selectAllPaike();
     }
     //删除排课

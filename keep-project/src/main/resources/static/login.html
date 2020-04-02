@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.js"></script>
+    <script src="jquery.cookie.js"></script>
+</head>
+<body>
+<h5 id="h1" style="color:brown"></h5>
+输入账号:<input id="i1" type="text" name="account"><br>
+输入密码:<input id="i2" type="text" name="password"><br>
+<button id="b1">登陆</button>
+</body>
+<script>
+
+    //开始登陆
+
+    $(b1).click(function(){
+        $.ajax({
+            type:"get",
+            url:"http://localhost:8000/adminLogin/login",
+            data:{
+                account:$(i1).val(),
+                password:$(i2).val()
+            },
+            success:function(result){
+
+                if(result.code == 2000 ){
+                    $.cookie('token', result.data.id);
+                    alert("登陆成功")
+                }else {
+                    $(h1).text(result.msg);
+                }
+
+
+                console.log(result);
+            }
+
+        })
+
+
+    })
+
+
+
+</script>
+</html>
