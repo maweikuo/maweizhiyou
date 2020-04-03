@@ -1,5 +1,6 @@
 package com.zhiyou.keepproject.service.imp;
 
+import com.zhiyou.keepproject.entity.Chinese2PinYinUtils;
 import com.zhiyou.keepproject.mapper.UserMapper;
 import com.zhiyou.keepproject.pojo.User;
 import com.zhiyou.keepproject.service.UserService;
@@ -16,6 +17,10 @@ public class UserServiceImp implements UserService {
     public void insertUser(User user) {
         Date time1= new java.sql.Date(new java.util.Date().getTime());
         user.setTime((java.sql.Date) time1);
+        String s = Chinese2PinYinUtils.trans2PinYin(user.getName());
+        user.setUserAccount(s);
+        user.setUserPassword(s);
+
         userMapper.insert(user);
     }
 

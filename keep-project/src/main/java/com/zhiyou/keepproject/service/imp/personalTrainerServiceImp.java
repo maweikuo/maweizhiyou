@@ -2,6 +2,7 @@ package com.zhiyou.keepproject.service.imp;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zhiyou.keepproject.entity.Chinese2PinYinUtils;
 import com.zhiyou.keepproject.mapper.personalTrainerMapper;
 import com.zhiyou.keepproject.pojo.Paike;
 import com.zhiyou.keepproject.pojo.personalTrainer;
@@ -33,6 +34,9 @@ public class personalTrainerServiceImp implements personalTrainerService {
 
     @Override
     public void insertpersonalTrainer(personalTrainer personalTrainer) {
+        String s = Chinese2PinYinUtils.trans2PinYin(personalTrainer.getPersonalTrainerName());
+        personalTrainer.setPersonalTraninerAccount(s);
+        personalTrainer.setPersonalTraninerPassword(s);
         personalTrainerMapper.insert(personalTrainer);
     }
 

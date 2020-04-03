@@ -33,6 +33,10 @@ public class User {
     private  String address;
     @TableField(value = "`static`")
     private  String UserStatic;
+    @TableField(value = "`user_account`")
+    private  String UserAccount;
+    @TableField(value = "`user_password`")
+    private  String UserPassword;
 
     public Integer getId() {
         return id;
@@ -112,5 +116,21 @@ public class User {
 
     public void setUserStatic(String userStatic) {
         UserStatic = userStatic;
+    }
+
+    public String getUserAccount() {
+        return UserAccount;
+    }
+
+    public void setUserAccount(String userAccount) {
+        UserAccount = userAccount;
+    }
+
+    public String getUserPassword() {
+        return UserPassword;
+    }
+
+    public void setUserPassword(String userPassword) {
+        UserPassword = userPassword;
     }
 }

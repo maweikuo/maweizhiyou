@@ -33,6 +33,10 @@ public class personalTrainer {
     private Date personalTrainerTime;
     @TableField(value = "personal_trainer_static")
     private  String personalTrainerStatic;
+    @TableField(value = "personal_traniner_account")
+    private  String personalTraninerAccount;
+    @TableField(value = "personal_traniner_password")
+    private  String personalTraninerPassword;
 
     public Integer getId() {
         return id;
@@ -112,5 +116,21 @@ public class personalTrainer {
 
     public void setPersonalTrainerStatic(String personalTrainerStatic) {
         this.personalTrainerStatic = personalTrainerStatic;
+    }
+
+    public String getPersonalTraninerAccount() {
+        return personalTraninerAccount;
+    }
+
+    public void setPersonalTraninerAccount(String personalTraninerAccount) {
+        this.personalTraninerAccount = personalTraninerAccount;
+    }
+
+    public String getPersonalTraninerPassword() {
+        return personalTraninerPassword;
+    }
+
+    public void setPersonalTraninerPassword(String personalTraninerPassword) {
+        this.personalTraninerPassword = personalTraninerPassword;
     }
 }
