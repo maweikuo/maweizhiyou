@@ -1,16 +1,22 @@
 package com.zhiyou.keepproject.service.imp;
 
+import com.zhiyou.keepproject.config.RedisTemplateConfig;
 import com.zhiyou.keepproject.entity.Chinese2PinYinUtils;
 import com.zhiyou.keepproject.mapper.UserMapper;
 import com.zhiyou.keepproject.pojo.User;
 import com.zhiyou.keepproject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 @Service
 public class UserServiceImp implements UserService {
+    @Autowired
+    private RedisTemplate redisTemplate;
     @Autowired
     private UserMapper userMapper;
     @Override
@@ -34,8 +40,25 @@ public class UserServiceImp implements UserService {
     userMapper.updateById(user);
     }
 
+
+
     @Override
     public List<User> selectAllUser() {
-        return userMapper.selectList(null);
+        String key="user:info";
+        Boolean aBoolean = redisTemplate.hasKey(key);
+        ValueOperations op = redisTemplate.opsForValue();
+        if(aBoolean == false){
+            List<User> users = userMapper.selectList(null);
+
+
+                    op.set(key,users);
+
+            return users;
+        }else {
+            Object o = op.get(key);
+            return (List<User>) o;
+        }
+
+
     }
 }
