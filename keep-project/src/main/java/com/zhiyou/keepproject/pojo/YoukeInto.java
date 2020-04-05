@@ -29,8 +29,17 @@ public class YoukeInto {
     private  String youkeZhiye;
     @TableField(value = "youke_hobbit")
     private  String youkeHobbit;
+    @TableField(value = "youke_adress")
+    private  String youkeAdress;
     @TableField(value = "youke_static")
     private  String youkeStatic;
+    public String getYoukeAdress() {
+        return youkeAdress;
+    }
+
+    public void setYoukeAdress(String youkeAdress) {
+        this.youkeAdress = youkeAdress;
+    }
 
     public Integer getId() {
         return id;

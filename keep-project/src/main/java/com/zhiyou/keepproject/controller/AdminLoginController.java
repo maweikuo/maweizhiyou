@@ -16,8 +16,8 @@ public class AdminLoginController {
     @Autowired
     private AdminLoginService adminLoginService;
     //健身管理系统登陆
-    @GetMapping(value = "login")
-    public ResponseData m1(AdminLogin adminLogin){
-       return adminLoginService.selectByAccAndPass(adminLogin.getAccount(), adminLogin.getPassword());
+    @RequestMapping(value = "login")
+    public ResponseData m1(String account,String password){
+       return adminLoginService.selectByAccAndPass(account, password);
     }
 }

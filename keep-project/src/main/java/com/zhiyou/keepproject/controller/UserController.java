@@ -37,6 +37,11 @@ public class UserController {
     public List<User> m4(){
         return  userService.selectAllUser();
     }
+    //通过id查询会员
+    @RequestMapping("selectById")
+    public User m5(Integer id){
+        return  userService.selectById(id);
+    }
 
 
 }

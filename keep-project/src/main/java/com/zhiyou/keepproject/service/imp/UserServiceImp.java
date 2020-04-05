@@ -61,4 +61,9 @@ public class UserServiceImp implements UserService {
 
 
     }
+
+    @Override
+    public User selectById(Integer id) {
+        return userMapper.selectById(id);
+    }
 }

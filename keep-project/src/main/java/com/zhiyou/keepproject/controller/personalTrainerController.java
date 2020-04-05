@@ -1,5 +1,6 @@
 package com.zhiyou.keepproject.controller;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.zhiyou.keepproject.pojo.personalTrainer;
 import com.zhiyou.keepproject.service.personalTrainerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class personalTrainerController {
     private personalTrainerService personalTrainerService;
     //查询所有教练
     @RequestMapping(value = "select")
-    public List<personalTrainer> m1(Integer page){
+    public IPage<personalTrainer> m1(Integer page){
         return  personalTrainerService.selectAllpersonalTrainer(page);
     }
     //修改教练信息
@@ -34,6 +35,11 @@ public class personalTrainerController {
     public void m4(Integer id)
     {
         personalTrainerService.deletepersonalTrainer(id);
+    }
+    //通过id查询教练
+    @RequestMapping("selectById")
+    public personalTrainer m5(Integer id){
+        return personalTrainerService.selectPByid(id);
     }
 
 }

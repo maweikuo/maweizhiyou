@@ -37,7 +37,7 @@ public class AdminLoginServiceImp implements AdminLoginService {
         if(user != null){
             if (user.getPassword().equals(password)){
                 a.setCode(ResponseCode.SUCCESS.getCode());
-                a.setMsg("user");
+                a.setMsg("超级管理员");
                 a.setData(adminLoginMapper.selectByAccount(account));
                 return a;
             }
@@ -46,9 +46,10 @@ public class AdminLoginServiceImp implements AdminLoginService {
         if(user1 != null)
         {
             if(user1.getUserPassword().equals(password)){
+                User uu = userMapper.selectByUserAccount(account);
                 a.setCode(ResponseCode.SUCCESS.getCode());
-                a.setMsg("user");
-                a.setData(userMapper.selectByUserAccount(account));
+                a.setMsg("会员");
+                a.setData(uu);
                 return a;
             }
         }
@@ -56,9 +57,10 @@ public class AdminLoginServiceImp implements AdminLoginService {
         if(user2 != null)
         {
             if(user2.getPersonalTraninerPassword().equals(password)){
+                personalTrainer jiaolian = personalTrainerMapper.selectByPersonalAccount(account);
                 a.setCode(ResponseCode.SUCCESS.getCode());
-                a.setMsg("user");
-                a.setData(personalTrainerMapper.selectByPersonalAccount(account));
+                a.setMsg("教练");
+                a.setData(jiaolian);
                 return a;
             }
         }

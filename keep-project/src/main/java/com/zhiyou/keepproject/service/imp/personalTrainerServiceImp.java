@@ -17,14 +17,17 @@ public class personalTrainerServiceImp implements personalTrainerService {
     private personalTrainerMapper personalTrainerMapper;
     private  final Integer size=4;
     @Override
-    public List<personalTrainer> selectAllpersonalTrainer(Integer page) {
+    public IPage<personalTrainer> selectAllpersonalTrainer(Integer page) {
         if(page==null || page <=0){
             page=1;
         }
         IPage<personalTrainer> objectPage = new Page<>(page, size);
         objectPage=  personalTrainerMapper.selectPage(objectPage, null);
-        List<personalTrainer> records = objectPage.getRecords();
-        return records;
+      /*  List<personalTrainer> records = objectPage.getRecords();
+        long size = objectPage.getSize();
+        System.out.println(size);
+        System.out.println(objectPage.getPages());*/
+        return objectPage;
     }
 
     @Override
@@ -35,13 +38,18 @@ public class personalTrainerServiceImp implements personalTrainerService {
     @Override
     public void insertpersonalTrainer(personalTrainer personalTrainer) {
         String s = Chinese2PinYinUtils.trans2PinYin(personalTrainer.getPersonalTrainerName());
-        personalTrainer.setPersonalTraninerAccount(s);
-        personalTrainer.setPersonalTraninerPassword(s);
+        personalTrainer.setPersonalTraninerAccount(s+"jiaolian");
+        personalTrainer.setPersonalTraninerPassword(s+"jiaolian");
         personalTrainerMapper.insert(personalTrainer);
     }
 
     @Override
     public void deletepersonalTrainer(Integer id) {
         personalTrainerMapper.deleteById(id);
+    }
+
+    @Override
+    public personalTrainer selectPByid(Integer id) {
+        return personalTrainerMapper.selectById(id);
     }
 }

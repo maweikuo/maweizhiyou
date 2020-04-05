@@ -21,4 +21,16 @@ public class GymCabinetController {
     public List<gymCabinet> m1(){
         return gymCabinetService.selectAll();
     }
+    //添加租柜
+    @RequestMapping("add")
+    public void m2(gymCabinet gymCabinet){
+        System.out.println(gymCabinet);
+        gymCabinetService.inserGymCabinet(gymCabinet);
+    }
+    //删除租柜
+    @RequestMapping("delete")
+    public void m3(Integer id){
+        gymCabinetService.deleteGymCabinet(id);
+    }
+
 }

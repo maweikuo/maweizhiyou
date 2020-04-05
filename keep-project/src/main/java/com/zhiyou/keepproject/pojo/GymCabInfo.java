@@ -29,6 +29,8 @@ public class GymCabInfo {
     private  Integer cabInfoMember;
     @TableField(value = "cab_info_status")
     private  Integer cabInfoStatus;
+    @TableField(value = "cab_cabinet_id")
+    private  Integer cabCabinetId;
 
     public Integer getId() {
         return id;
@@ -92,5 +94,13 @@ public class GymCabInfo {
 
     public void setCabInfoStatus(Integer cabInfoStatus) {
         this.cabInfoStatus = cabInfoStatus;
+    }
+
+    public Integer getCabCabinetId() {
+        return cabCabinetId;
+    }
+
+    public void setCabCabinetId(Integer cabCabinetId) {
+        this.cabCabinetId = cabCabinetId;
     }
 }

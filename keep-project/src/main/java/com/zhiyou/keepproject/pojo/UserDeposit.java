@@ -14,19 +14,21 @@ import java.sql.Date;
 @TableName(value = "user_deposit")
 public class UserDeposit {
     @TableId(value = "id", type = IdType.AUTO)
-    private  Integer id;
+    private Integer id;
     @TableField(value = "user_deposit_number")
-    private  Integer userDepositNumber;
+    private Integer userDepositNumber;
     @TableField(value = "user_deposit_id")
-    private  Integer userDepositId;
+    private Integer userDepositId;
     @TableField(value = "user_deposit_money")
-    private  Integer userDepositMoney;
+    private Integer userDepositMoney;
     @TableField(value = "user_deposit_time")
     private Date userDepositTime;
     @TableField(value = "user_id")
-    private  Integer userId;
+    private Integer userId;
     @TableField(value = "user_deposit_static")
-    private  String userDepositStatic;
+    private String userDepositStatic;
+    @TableField(value = "`name`")
+    private  String name;
 
     public Integer getId() {
         return id;
@@ -82,5 +84,13 @@ public class UserDeposit {
 
     public void setUserDepositStatic(String userDepositStatic) {
         this.userDepositStatic = userDepositStatic;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

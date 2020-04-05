@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>keep管理系统</title>
+    <script src="jquery.js"></script>
+    <script src="jquery.cookie.js"></script>
+</head>
+
+<body>
+<div class="header">
+    <div class="user">
+        <font id="font1"></font>  <a  id="a1">退出</a>
+    </div>
+</div>
+<script>
+
+     var a=   $.cookie("jiaolian");
+     if(a != 0 && a != undefined)
+     {
+         $.ajax({
+             type: "get",
+             url: "personalTrainer/selectById",
+             data:{
+                 id : a
+             },
+             success:function (result) {
+                 $(font1).text("欢迎:"+result.personalTrainerName)
+             }
+         })
+         $(a1).click(function () {
+             $.cookie("jiaolian",0);
+             window.location.href = "/login.html";
+         })
+
+     }
+     else {
+         alert("请登录.............")
+         window.location.href = "/login.html";
+     }
+
+</script>
+<div class="main">
+
+    <div id="left">
+
+        <div id="body1" class="bnormal">
+            <p>
+                <a target="pageBox" href="backUser/show.do">
+                    <i class="glyphicon glyphicon-star"></i>日程表
+                </a>
+            </p>
+            <p>
+                <a target="pageBox" href="youke/youke.html">
+                    <i class="glyphicon glyphicon-star"></i>游客登记
+                </a>
+            </p>
+            <p>
+                <a target="pageBox" href="channel/show.do">
+                    <i class="glyphicon glyphicon-star"></i>会员管理
+                </a>
+            </p>
+            <p>
+                <a target="pageBox" href="mold/show.do">
+                    <i class="glyphicon glyphicon-star"></i>私教预约
+                </a>
+            </p>
+            <p>
+                <a target="pageBox" href="area/show.do">
+                    <i class="glyphicon glyphicon-star"></i>我的信息（教练）
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+
+</html>

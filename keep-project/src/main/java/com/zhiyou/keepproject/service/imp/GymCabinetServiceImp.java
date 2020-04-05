@@ -22,11 +22,13 @@ public class GymCabinetServiceImp implements GymCabinetService {
 
     @Override
     public void inserGymCabinet(gymCabinet gymCabinet) {
-
+        Integer integer = gymCabinetMapper.selectBianHao();
+        gymCabinet.setCabNumber(integer+1);
+        gymCabinetMapper.insert(gymCabinet);
     }
 
     @Override
     public void deleteGymCabinet(Integer id) {
-
+        gymCabinetMapper.deleteById(id);
     }
 }

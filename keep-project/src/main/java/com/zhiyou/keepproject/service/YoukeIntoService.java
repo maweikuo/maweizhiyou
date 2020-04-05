@@ -8,4 +8,6 @@ public interface YoukeIntoService {
     void inserYoukeInto(YoukeInto youkeInto);
     //查询游客
     ResponseData selectYoukeInto();
+    //删除游客
+    void deleteYouke(Integer id);
 }

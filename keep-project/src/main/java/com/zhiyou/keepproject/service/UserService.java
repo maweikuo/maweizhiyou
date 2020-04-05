@@ -13,4 +13,6 @@ public interface UserService  {
     void updateUer(User user);
     //查询会员
     List<User> selectAllUser();
+    //通过id查询会员
+    User selectById(Integer id);
 }

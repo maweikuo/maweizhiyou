@@ -18,8 +18,15 @@ public class YoukeIntoController {
         youkeIntoService.inserYoukeInto(youkeInto);
     }
     //查询游客进场所有信息
+    @RequestMapping(value = "select")
     public ResponseData m2(){
        return youkeIntoService.selectYoukeInto();
+    }
+    //删除游客
+    @RequestMapping(value = "delete")
+    public void m3(Integer id)
+    {
+        youkeIntoService.deleteYouke(id);
     }
 
 }
