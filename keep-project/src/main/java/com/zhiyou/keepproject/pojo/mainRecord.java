@@ -16,25 +16,25 @@ public class mainRecord {
     @TableId(value = "id", type = IdType.AUTO)
     private  Integer id;
     @TableField(value = "main_record_number")
-    private  Integer main_record_number;
+    private  Integer mainRecordNumber;
     @TableField(value = "equipment_on")
-    private  String equipment_on;
+    private  String equipmentOn;
     @TableField(value = "equipment_name")
-    private  String equipment_name;
+    private  String equipmentName;
     @TableField(value = "equipment_bianhao")
-    private  String equipment_bianhao;
+    private  String equipmentBianhao;
     @TableField(value = "equipment_message")
-    private  String equipment_message;
+    private  String equipmentMessage;
     @TableField(value = "main_record_time")
-    private Date main_record_time;
+    private Date mainRecordTime;
     @TableField(value = "main_record_money")
-    private  Integer main_record_money;
+    private  Integer mainRecordMoney;
     @TableField(value = "record_becouse")
-    private  String record_becouse;
+    private  String recordBecouse;
     @TableField(value = "main_people_name")
-    private  String main_people_name;
+    private  String mainPeopleName;
     @TableField(value = "main_people_phone")
-    private  Integer main_people_phone;
+    private  Integer mainPeoplePhone;
 
     public Integer getId() {
         return id;
@@ -44,83 +44,83 @@ public class mainRecord {
         this.id = id;
     }
 
-    public Integer getMain_record_number() {
-        return main_record_number;
+    public Integer getMainRecordNumber() {
+        return mainRecordNumber;
     }
 
-    public void setMain_record_number(Integer main_record_number) {
-        this.main_record_number = main_record_number;
+    public void setMainRecordNumber(Integer mainRecordNumber) {
+        this.mainRecordNumber = mainRecordNumber;
     }
 
-    public String getEquipment_on() {
-        return equipment_on;
+    public String getEquipmentOn() {
+        return equipmentOn;
     }
 
-    public void setEquipment_on(String equipment_on) {
-        this.equipment_on = equipment_on;
+    public void setEquipmentOn(String equipmentOn) {
+        this.equipmentOn = equipmentOn;
     }
 
-    public String getEquipment_name() {
-        return equipment_name;
+    public String getEquipmentName() {
+        return equipmentName;
     }
 
-    public void setEquipment_name(String equipment_name) {
-        this.equipment_name = equipment_name;
+    public void setEquipmentName(String equipmentName) {
+        this.equipmentName = equipmentName;
     }
 
-    public String getEquipment_bianhao() {
-        return equipment_bianhao;
+    public String getEquipmentBianhao() {
+        return equipmentBianhao;
     }
 
-    public void setEquipment_bianhao(String equipment_bianhao) {
-        this.equipment_bianhao = equipment_bianhao;
+    public void setEquipmentBianhao(String equipmentBianhao) {
+        this.equipmentBianhao = equipmentBianhao;
     }
 
-    public String getEquipment_message() {
-        return equipment_message;
+    public String getEquipmentMessage() {
+        return equipmentMessage;
     }
 
-    public void setEquipment_message(String equipment_message) {
-        this.equipment_message = equipment_message;
+    public void setEquipmentMessage(String equipmentMessage) {
+        this.equipmentMessage = equipmentMessage;
     }
 
-    public Date getMain_record_time() {
-        return main_record_time;
+    public Date getMainRecordTime() {
+        return mainRecordTime;
     }
 
-    public void setMain_record_time(Date main_record_time) {
-        this.main_record_time = main_record_time;
+    public void setMainRecordTime(Date mainRecordTime) {
+        this.mainRecordTime = mainRecordTime;
     }
 
-    public Integer getMain_record_money() {
-        return main_record_money;
+    public Integer getMainRecordMoney() {
+        return mainRecordMoney;
     }
 
-    public void setMain_record_money(Integer main_record_money) {
-        this.main_record_money = main_record_money;
+    public void setMainRecordMoney(Integer mainRecordMoney) {
+        this.mainRecordMoney = mainRecordMoney;
     }
 
-    public String getRecord_becouse() {
-        return record_becouse;
+    public String getRecordBecouse() {
+        return recordBecouse;
     }
 
-    public void setRecord_becouse(String record_becouse) {
-        this.record_becouse = record_becouse;
+    public void setRecordBecouse(String recordBecouse) {
+        this.recordBecouse = recordBecouse;
     }
 
-    public String getMain_people_name() {
-        return main_people_name;
+    public String getMainPeopleName() {
+        return mainPeopleName;
     }
 
-    public void setMain_people_name(String main_people_name) {
-        this.main_people_name = main_people_name;
+    public void setMainPeopleName(String mainPeopleName) {
+        this.mainPeopleName = mainPeopleName;
     }
 
-    public Integer getMain_people_phone() {
-        return main_people_phone;
+    public Integer getMainPeoplePhone() {
+        return mainPeoplePhone;
     }
 
-    public void setMain_people_phone(Integer main_people_phone) {
-        this.main_people_phone = main_people_phone;
+    public void setMainPeoplePhone(Integer mainPeoplePhone) {
+        this.mainPeoplePhone = mainPeoplePhone;
     }
 }

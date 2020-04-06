@@ -25,10 +25,14 @@ public class leagueClass {
     private  Date leagueClassStartTime;
     @TableField(value = "league_class_end_time")
     private Date leagueClassEndTime;
-    @TableField(value = "league_class_personal_trainer")
-    private  String leagueClassPersonalTrainer;
+    @TableField(value = "league_class_personal_trainer_id")
+    private  Integer leagueClassPersonalTrainerId;
     @TableField(value = "league_class_static")
     private  String leagueClassStatic;
+    @TableField(value = "league_class_shuju_static")
+    private Integer leagueClassShujuStatic;
+    @TableField(value = "league_class_personal_trainer_name")
+    private  String leagueClassPersonalTrainerName;
 
     public Integer getId() {
         return id;
@@ -78,12 +82,12 @@ public class leagueClass {
         this.leagueClassEndTime = leagueClassEndTime;
     }
 
-    public String getLeagueClassPersonalTrainer() {
-        return leagueClassPersonalTrainer;
+    public Integer getLeagueClassPersonalTrainerId() {
+        return leagueClassPersonalTrainerId;
     }
 
-    public void setLeagueClassPersonalTrainer(String leagueClassPersonalTrainer) {
-        this.leagueClassPersonalTrainer = leagueClassPersonalTrainer;
+    public void setLeagueClassPersonalTrainerId(Integer leagueClassPersonalTrainerId) {
+        this.leagueClassPersonalTrainerId = leagueClassPersonalTrainerId;
     }
 
     public String getLeagueClassStatic() {
@@ -92,5 +96,21 @@ public class leagueClass {
 
     public void setLeagueClassStatic(String leagueClassStatic) {
         this.leagueClassStatic = leagueClassStatic;
+    }
+
+    public Integer getLeagueClassShujuStatic() {
+        return leagueClassShujuStatic;
+    }
+
+    public void setLeagueClassShujuStatic(Integer leagueClassShujuStatic) {
+        this.leagueClassShujuStatic = leagueClassShujuStatic;
+    }
+
+    public String getLeagueClassPersonalTrainerName() {
+        return leagueClassPersonalTrainerName;
+    }
+
+    public void setLeagueClassPersonalTrainerName(String leagueClassPersonalTrainerName) {
+        this.leagueClassPersonalTrainerName = leagueClassPersonalTrainerName;
     }
 }

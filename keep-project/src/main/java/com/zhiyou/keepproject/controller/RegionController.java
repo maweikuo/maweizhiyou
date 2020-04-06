@@ -22,5 +22,10 @@ public class RegionController {
     public ResponseData m2(){
         return  regionService.selectAllRegion();
     }
-
+    //删除
+    @RequestMapping(value = "delete")
+    public void m3(Integer id)
+    {
+        regionService.deleteById(id);
+    }
 }

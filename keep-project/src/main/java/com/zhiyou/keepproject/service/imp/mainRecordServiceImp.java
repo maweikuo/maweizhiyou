@@ -6,6 +6,7 @@ import com.zhiyou.keepproject.service.mainRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -14,6 +15,10 @@ public class mainRecordServiceImp  implements mainRecordService {
     private mainRecordMapper mainRecordMapper;
     @Override
     public void insermainRecord(mainRecord mainRecord) {
+        Date date = new Date();
+        mainRecord.setMainRecordNumber(Integer.valueOf((int) date.getTime()));
+        Date time1= new java.sql.Date(new java.util.Date().getTime());
+        mainRecord.setMainRecordTime((java.sql.Date) time1);
         mainRecordMapper.insert(mainRecord);
     }
 

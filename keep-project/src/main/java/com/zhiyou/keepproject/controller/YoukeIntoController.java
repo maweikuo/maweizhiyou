@@ -15,6 +15,7 @@ public class YoukeIntoController {
 //添加游客进场
     @RequestMapping("insert")
     public  void  m1(YoukeInto youkeInto){
+        System.out.println(youkeInto);
         youkeIntoService.inserYoukeInto(youkeInto);
     }
     //查询游客进场所有信息
@@ -28,5 +29,14 @@ public class YoukeIntoController {
     {
         youkeIntoService.deleteYouke(id);
     }
-
+    //通过id查询游客
+    @RequestMapping("selectById")
+    public YoukeInto m4(Integer id){
+        return  youkeIntoService.selectById(id);
+    }
+    //修改游客
+    @RequestMapping("update")
+    public void m5(YoukeInto youkeInto){
+        youkeIntoService.updateYouke(youkeInto);
+    }
 }

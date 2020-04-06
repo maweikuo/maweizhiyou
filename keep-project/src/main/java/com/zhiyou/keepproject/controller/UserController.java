@@ -17,7 +17,6 @@ public class UserController {
     //添加会员
     @RequestMapping(value = "insert")
     public  void m1(User user){
-        System.out.println(user);
         userService.insertUser(user);
     }
     //删除会员

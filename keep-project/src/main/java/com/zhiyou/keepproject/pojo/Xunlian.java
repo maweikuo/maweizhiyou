@@ -17,12 +17,14 @@ public class Xunlian {
     private  Integer id;
     @TableField(value = "xunlian_number")
     private  Integer xunlianNumber;
-    @TableField(value = "user_number")
-    private  Integer userNumber;
+    @TableField(value = "user_id")
+    private  Integer userId;
     @TableField(value = "applian_name")
     private  String applianName;
     @TableField(value = "xunlian_time")
-    private Date xunlianTime;
+    private String xunlianTime;
+    @TableField(value = "user_name")
+    private  String userName;
 
     public Integer getId() {
         return id;
@@ -40,12 +42,12 @@ public class Xunlian {
         this.xunlianNumber = xunlianNumber;
     }
 
-    public Integer getUserNumber() {
-        return userNumber;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserNumber(Integer userNumber) {
-        this.userNumber = userNumber;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getApplianName() {
@@ -56,11 +58,19 @@ public class Xunlian {
         this.applianName = applianName;
     }
 
-    public Date getXunlianTime() {
+    public String getXunlianTime() {
         return xunlianTime;
     }
 
-    public void setXunlianTime(Date xunlianTime) {
+    public void setXunlianTime(String xunlianTime) {
         this.xunlianTime = xunlianTime;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

@@ -12,21 +12,23 @@ import java.sql.Date;
 @Data
 @ToString
 @TableName(value = "user_admin")
-public class User_Admin {
+public class UserAdmin {
     @TableId(value = "id", type = IdType.AUTO)
     private  Integer id;
     @TableField(value = "user_admin_number")
     private  Integer userAdminNumber;
-    @TableField(value = "userId")
+    @TableField(value = "user_id")
     private  Integer userId;
-    @TableField(value = "startTime")
+    @TableField(value = "start_time")
     private  Date startTime;
-    @TableField(value = "endTime")
+    @TableField(value = "end_time")
     private Date endTime;
     @TableField(value = "balance")
     private  Integer balance;
-    @TableField(value = "userAdminStatic")
+    @TableField(value = "user_admin_static")
     private  String userAdminStatic;
+    @TableField(value = "user_name")
+    private  String userName;
 
     public Integer getId() {
         return id;
@@ -82,5 +84,13 @@ public class User_Admin {
 
     public void setUserAdminStatic(String userAdminStatic) {
         this.userAdminStatic = userAdminStatic;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }

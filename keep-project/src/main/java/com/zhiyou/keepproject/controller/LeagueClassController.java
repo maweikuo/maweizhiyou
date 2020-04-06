@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.sound.midi.Soundbank;
 import java.util.List;
 
 @RestController
@@ -18,6 +19,11 @@ public class LeagueClassController {
     @RequestMapping(value = "select")
     public List<leagueClass> m1(){
         return  leagueClassService.selectAllleagueClass();
+    }
+    //通过id查询团课
+    @RequestMapping("selectById")
+    public leagueClass mm(Integer id){
+        return leagueClassService.selectById(id);
     }
     //修改团课
     @RequestMapping(value = "update")

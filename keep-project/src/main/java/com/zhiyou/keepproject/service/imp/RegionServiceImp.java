@@ -28,4 +28,9 @@ public class RegionServiceImp implements RegionService {
         a.setData(regionMapper.selectList(null));
         return a;
     }
+
+    @Override
+    public void deleteById(Integer id) {
+        regionMapper.deleteById(id);
+    }
 }

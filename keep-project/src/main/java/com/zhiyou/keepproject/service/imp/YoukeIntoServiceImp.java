@@ -34,4 +34,14 @@ public class YoukeIntoServiceImp implements YoukeIntoService {
     public void deleteYouke(Integer id) {
         youkeIntoMapper.deleteById(id);
     }
+
+    @Override
+    public YoukeInto selectById(Integer id) {
+        return youkeIntoMapper.selectById(id);
+    }
+
+    @Override
+    public void updateYouke(YoukeInto youkeInto) {
+        youkeIntoMapper.updateById(youkeInto);
+    }
 }

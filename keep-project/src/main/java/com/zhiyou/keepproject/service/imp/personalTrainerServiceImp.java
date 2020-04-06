@@ -10,6 +10,7 @@ import com.zhiyou.keepproject.service.personalTrainerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 @Service
 public class personalTrainerServiceImp implements personalTrainerService {
@@ -31,12 +32,19 @@ public class personalTrainerServiceImp implements personalTrainerService {
     }
 
     @Override
+    public List<personalTrainer> selectAll() {
+        return personalTrainerMapper.selectList(null);
+    }
+
+    @Override
     public void updatepersonalTrainer(personalTrainer personalTrainer) {
         personalTrainerMapper.updateById(personalTrainer);
     }
 
     @Override
     public void insertpersonalTrainer(personalTrainer personalTrainer) {
+        Date date = new Date();
+        personalTrainer.setPersonalTrainerNumber(Integer.valueOf((int) date.getTime()));
         String s = Chinese2PinYinUtils.trans2PinYin(personalTrainer.getPersonalTrainerName());
         personalTrainer.setPersonalTraninerAccount(s+"jiaolian");
         personalTrainer.setPersonalTraninerPassword(s+"jiaolian");

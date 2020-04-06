@@ -6,6 +6,7 @@ import com.zhiyou.keepproject.service.leagueClassService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 @Service
 public class leagueClassServiceImp implements leagueClassService {
@@ -13,7 +14,12 @@ public class leagueClassServiceImp implements leagueClassService {
     private leagueClassMapper leagueClassMapper;
     @Override
     public List<leagueClass> selectAllleagueClass() {
-        return leagueClassMapper.selectList(null);
+        return leagueClassMapper.selectAll();
+    }
+
+    @Override
+    public leagueClass selectById(Integer id) {
+        return leagueClassMapper.selectByid(id);
     }
 
     @Override
@@ -28,6 +34,8 @@ public class leagueClassServiceImp implements leagueClassService {
 
     @Override
     public void insertleagueClass(leagueClass leagueClass) {
+        Date date = new Date();
+        leagueClass.setLeagueClassNumber(Integer.valueOf((int) date.getTime()));
         leagueClassMapper.insert(leagueClass);
     }
 }

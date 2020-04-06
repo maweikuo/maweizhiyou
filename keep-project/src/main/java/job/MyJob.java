@@ -26,6 +26,6 @@ public class MyJob extends QuartzJobBean {
         ValueOperations op = redisTemplate.opsForValue();
         op.set(key,users);
 
-
+        //System.out.println("===============开始刷新会员信息啦~~~我在job包下");
     }
 }

@@ -24,7 +24,7 @@ public class QuartzConfig  {
     @Bean
     public Trigger trigger(){
         //设置任务的执行方式
-        SimpleScheduleBuilder scheduleBuilder = SimpleScheduleBuilder.simpleSchedule().withIntervalInSeconds(2222).repeatForever();
+        SimpleScheduleBuilder scheduleBuilder = SimpleScheduleBuilder.simpleSchedule().withIntervalInSeconds(10).repeatForever();
         return TriggerBuilder.newTrigger().
                 forJob(myJob()).
                         withIdentity("myTriger").
