@@ -12,4 +12,14 @@ public interface personalTrainerOrderService {
     List<User> selectAllUByperorderId(Integer id);
     // 通过会员id查询我的私教
     List<personalTrainerOrder> selectPByUserId(Integer id);
+    //通过教练id查询表信息
+    List<personalTrainerOrder> slectById(Integer id);
+    //通过id修改
+    void update(personalTrainerOrder personalTrainerOrder);
+    //删除
+    void delete(Integer id);
+    //通过表id查询单条数据
+    personalTrainerOrder selectByOrderId(Integer id);
+    //通过教练id添加会员（修改）
+    void updateBypId(personalTrainerOrder personalTrainerOrder);
 }

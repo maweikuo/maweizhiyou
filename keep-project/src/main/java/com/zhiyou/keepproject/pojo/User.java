@@ -31,7 +31,7 @@ public class User {
     private  String hobbit;
     @TableField(value = "address")
     private  String address;
-    @TableField(value = "`static`")
+    @TableField(value = "user_static")
     private  String UserStatic;
     @TableField(value = "`user_account`")
     private  String UserAccount;

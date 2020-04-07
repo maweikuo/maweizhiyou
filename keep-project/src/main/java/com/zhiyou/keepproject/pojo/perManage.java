@@ -19,8 +19,8 @@ public class perManage {
     private  Integer preManageNumber;
     @TableField(value = "personal_trainer_id")
     private  Integer personalTrainerId;
-    @TableField(value = "user_number")
-    private  Integer userNumber;
+    @TableField(value = "user_id")
+    private  Integer userId;
     @TableField(value = "personal_trainer_type")
     private  String personalTrainerType;
     @TableField(value = "personal_trainer_money")
@@ -56,12 +56,12 @@ public class perManage {
         this.personalTrainerId = personalTrainerId;
     }
 
-    public Integer getUserNumber() {
-        return userNumber;
+    public Integer getUserId() {
+        return userId;
     }
 
-    public void setUserNumber(Integer userNumber) {
-        this.userNumber = userNumber;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     public String getPersonalTrainerType() {

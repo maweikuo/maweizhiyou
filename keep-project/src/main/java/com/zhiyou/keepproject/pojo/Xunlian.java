@@ -22,7 +22,7 @@ public class Xunlian {
     @TableField(value = "applian_name")
     private  String applianName;
     @TableField(value = "xunlian_time")
-    private String xunlianTime;
+    private Integer xunlianTime;
     @TableField(value = "user_name")
     private  String userName;
 
@@ -58,11 +58,11 @@ public class Xunlian {
         this.applianName = applianName;
     }
 
-    public String getXunlianTime() {
+    public Integer getXunlianTime() {
         return xunlianTime;
     }
 
-    public void setXunlianTime(String xunlianTime) {
+    public void setXunlianTime(Integer xunlianTime) {
         this.xunlianTime = xunlianTime;
     }
 

@@ -27,20 +27,59 @@
         }
     })
     $(b1).click(function () {
+        // 通过潜客id查询信息 先把信息添加到user表中然后返回这条数据id 然后才可以添加会员卡信息 添加成功后跳转user修改页面补全信息
+        //1通过潜客id查询信息
         $.ajax({
+            async:false,
             type:"get",
-            url:"/userAdmin/insert",
+            url:"/youkeInto/selectById",
             data:{
-                userId:$(s1).val(),
-                startTime:$(i1).val(),
-                endTime:$(i2).val(),
-                balance:$(i3).val(),
-                userAdminStatic:$(i4).val()
-            },
-            success:function () {
-                window.location.href="userAdmin.html"
+                id:$(s1).val()
+            },success:function (result) {
+                console.log(result)
+                //2先把信息添加到user表中然后返回这条数据id
+                $.ajax({
+                    async:false,
+                    type:"get",
+                    url:"/user/insertFId",
+                    data:{
+                        sex:result.youkeSex,
+                        phone:result.youkePhone,
+                        time:result.youkeTime,
+                        speak:result.youkeBeizhu,
+                        Occupation:result.youkeZhiye,
+                        hobbit:result.youkeHobbit,
+                        address:result.youkeAdress,
+                        UserStatic:result.youkeStatic
+                    },success:function (result1) {
+                        console.log(result1)
+                        //3 (result返回的是user这条数据的id)然后才可以添加会员卡信息
+                        $.ajax({
+                            async:false,
+                            type:"get",
+                            url:"/userAdmin/insert",
+                            data:{
+                                userId:result1,
+                                startTime:$(i1).val(),
+                                endTime:$(i2).val(),
+                                balance:$(i3).val(),
+                                userAdminStatic:$(i4).val()
+                            },
+                            success:function () {
+                                //添加成功后跳转user修改页面补全信息
+                                alert("添加成功请补全会员信息")
+                                window.location.href="/user/userUpdate.html?id="+result1
+                            }
+                        })
+                    }
+
+                })
             }
         })
+
+
+
+
 
     })
 

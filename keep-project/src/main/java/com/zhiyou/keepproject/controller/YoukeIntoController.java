@@ -15,7 +15,6 @@ public class YoukeIntoController {
 //添加游客进场
     @RequestMapping("insert")
     public  void  m1(YoukeInto youkeInto){
-        System.out.println(youkeInto);
         youkeIntoService.inserYoukeInto(youkeInto);
     }
     //查询游客进场所有信息

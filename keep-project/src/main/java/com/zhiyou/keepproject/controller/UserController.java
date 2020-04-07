@@ -13,11 +13,16 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
-
+        //成为会员的流程  潜客等级  会员卡办理 ---
     //添加会员
     @RequestMapping(value = "insert")
     public  void m1(User user){
         userService.insertUser(user);
+    }
+    //添加会员并返回该条数据的id
+    @RequestMapping(value = "insertFId")
+    public Integer mm(User user){
+        return userService.insertIntoUserFId(user);
     }
     //删除会员
     @RequestMapping(value = "delete")
@@ -27,7 +32,7 @@ public class UserController {
     }
     //修改会员
     @RequestMapping(value = "update")
-    public void  m3(User user)
+    public void  m3(User user ,String UserStatic)
     {
         userService.updateUer(user);
     }

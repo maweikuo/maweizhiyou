@@ -32,7 +32,7 @@ public class personalTrainerController {
     }
     //修改教练信息
     @PostMapping(value = "update")
-    public void m2(@RequestParam(value = "file") MultipartFile file
+    public void m2(@RequestParam(value = "file",required = false) MultipartFile file
             , @RequestParam(value = "id") Integer id
             , @RequestParam(value = "personalTrainerName") String personalTrainerName
             , @RequestParam(value = "personalTrainerAge") Integer personalTrainerAge
@@ -41,22 +41,23 @@ public class personalTrainerController {
             , @RequestParam(value = "personalTrainerSpreak") String personalTrainerSpreak
             , @RequestParam(value = "personalTrainerTime") Date personalTrainerTime
             , @RequestParam(value = "personalTrainerStatic") String personalTrainerStatic) throws IOException {
-        if(!file.isEmpty()){
+        personalTrainer p = new personalTrainer();
+
+        if(file != null &&!file.isEmpty()){
             String filename = file.getOriginalFilename();
             String path = qiniuUtil.uploadImg((FileInputStream) file.getInputStream(), filename);
-            personalTrainer p = new personalTrainer();
-            p.setId(id);
-            p.setPersonalTrainerName(personalTrainerName);
-            p.setPersonalTrainerAge(personalTrainerAge);
-            p.setPersonalTrainerHobbit(personalTrainerHobbit);
-            p.setPersonalTrainerSex(personalTrainerSex);
-            p.setPersonalTrainerSpreak(personalTrainerSpreak);
-            p.setPersonalTrainerTime(personalTrainerTime);
-            p.setPersonalTrainerStatic(personalTrainerStatic);
             p.setPersonalTrainerPriture(path);
-            personalTrainerService.updatepersonalTrainer(p);
-
         }
+        p.setId(id);
+        p.setPersonalTrainerName(personalTrainerName);
+        p.setPersonalTrainerAge(personalTrainerAge);
+        p.setPersonalTrainerHobbit(personalTrainerHobbit);
+        p.setPersonalTrainerSex(personalTrainerSex);
+        p.setPersonalTrainerSpreak(personalTrainerSpreak);
+        p.setPersonalTrainerTime(personalTrainerTime);
+        p.setPersonalTrainerStatic(personalTrainerStatic);
+        personalTrainerService.updatepersonalTrainer(p);
+
     }
     //添加教练
     @RequestMapping(value = "insert")
@@ -77,7 +78,7 @@ public class personalTrainerController {
     }
     //添加头像
     @PostMapping(value = "/insertHead")
-    public String m1(@RequestParam(value = "file") MultipartFile file
+    public String m1(@RequestParam(value = "file",required = false) MultipartFile file
             , @RequestParam(value = "personalTrainerName") String personalTrainerName
             , @RequestParam(value = "personalTrainerAge") Integer personalTrainerAge
             , @RequestParam(value = "personalTrainerHobbit") String personalTrainerHobbit
@@ -85,22 +86,22 @@ public class personalTrainerController {
             , @RequestParam(value = "personalTrainerSpreak") String personalTrainerSpreak
             , @RequestParam(value = "personalTrainerTime") Date personalTrainerTime
             , @RequestParam(value = "personalTrainerStatic") String personalTrainerStatic) throws IOException {
+        personalTrainer p = new personalTrainer();
 
-        if(!file.isEmpty()){
+        if(file != null &&!file.isEmpty()){
             String filename = file.getOriginalFilename();
             String path = qiniuUtil.uploadImg((FileInputStream) file.getInputStream(), filename);
-            personalTrainer p = new personalTrainer();
-            p.setPersonalTrainerName(personalTrainerName);
-            p.setPersonalTrainerAge(personalTrainerAge);
-            p.setPersonalTrainerHobbit(personalTrainerHobbit);
-            p.setPersonalTrainerSex(personalTrainerSex);
-            p.setPersonalTrainerSpreak(personalTrainerSpreak);
-            p.setPersonalTrainerTime(personalTrainerTime);
-            p.setPersonalTrainerStatic(personalTrainerStatic);
             p.setPersonalTrainerPriture(path);
-            personalTrainerService.insertpersonalTrainer(p);
-            return "添加成功";
         }
+        p.setPersonalTrainerName(personalTrainerName);
+        p.setPersonalTrainerAge(personalTrainerAge);
+        p.setPersonalTrainerHobbit(personalTrainerHobbit);
+        p.setPersonalTrainerSex(personalTrainerSex);
+        p.setPersonalTrainerSpreak(personalTrainerSpreak);
+        p.setPersonalTrainerTime(personalTrainerTime);
+        p.setPersonalTrainerStatic(personalTrainerStatic);
+        personalTrainerService.insertpersonalTrainer(p);
+
         return "添加失败，请重试!";
     }
 

@@ -10,5 +10,8 @@ public interface UserMapper extends BaseMapper<User> {
     //会员通过账号登陆
     @Select(value = "select * from user where user_account=#{userAccount}")
     User selectByUserAccount(String userAccount);
+    //通过手机号查询该数据
+    @Select(value = "select * from user where phone =#{phone}")
+    User selectByPhone(Integer phone);
 
 }

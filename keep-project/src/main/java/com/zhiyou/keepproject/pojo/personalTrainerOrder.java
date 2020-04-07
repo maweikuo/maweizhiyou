@@ -20,9 +20,19 @@ public class personalTrainerOrder {
     @TableField(value = "personal_trainer_id")
     private  Integer personalTrainerId;
     @TableField(value = "personal_trainer_order_start_time")
-    private Date personalTrainerOrderStartTime;
+    private String personalTrainerOrderStartTime;
     @TableField(value = "personal_trainer_order_end_time")
-    private  Date personalTrainerOrderEndTime;
+    private  String personalTrainerOrderEndTime;
+    @TableField(value = "shuju")
+    private  Integer shuju;
+
+    public Integer getShuju() {
+        return shuju;
+    }
+
+    public void setShuju(Integer shuju) {
+        this.shuju = shuju;
+    }
 
     public Integer getId() {
         return id;
@@ -48,19 +58,19 @@ public class personalTrainerOrder {
         this.personalTrainerId = personalTrainerId;
     }
 
-    public Date getPersonalTrainerOrderStartTime() {
+    public String getPersonalTrainerOrderStartTime() {
         return personalTrainerOrderStartTime;
     }
 
-    public void setPersonalTrainerOrderStartTime(Date personalTrainerOrderStartTime) {
+    public void setPersonalTrainerOrderStartTime(String personalTrainerOrderStartTime) {
         this.personalTrainerOrderStartTime = personalTrainerOrderStartTime;
     }
 
-    public Date getPersonalTrainerOrderEndTime() {
+    public String getPersonalTrainerOrderEndTime() {
         return personalTrainerOrderEndTime;
     }
 
-    public void setPersonalTrainerOrderEndTime(Date personalTrainerOrderEndTime) {
+    public void setPersonalTrainerOrderEndTime(String personalTrainerOrderEndTime) {
         this.personalTrainerOrderEndTime = personalTrainerOrderEndTime;
     }
 }

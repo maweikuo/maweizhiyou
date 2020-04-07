@@ -15,14 +15,16 @@ public class Schedule {
     private  Integer id;
     @TableField(value = "schedule_number")
     private  Integer scheduleNumber;
-    @TableField(value = "personal_trainer_number")
-    private  Integer personalTrainerNumber;
+    @TableField(value = "personal_trainer_id")
+    private  Integer personalTrainerId;
     @TableField(value = "schedule_anpai")
     private  String scheduleAnpai;
     @TableField(value = "schedule_no_anpai")
     private  String scheduleNoAnpai;
     @TableField(value = "schedule_beizhu")
     private  String scheduleBeizhu;
+    @TableField(value = "personal_trainer_name")
+    private  String personalTrainerName;
 
     public Integer getId() {
         return id;
@@ -40,12 +42,12 @@ public class Schedule {
         this.scheduleNumber = scheduleNumber;
     }
 
-    public Integer getPersonalTrainerNumber() {
-        return personalTrainerNumber;
+    public Integer getPersonalTrainerId() {
+        return personalTrainerId;
     }
 
-    public void setPersonalTrainerNumber(Integer personalTrainerNumber) {
-        this.personalTrainerNumber = personalTrainerNumber;
+    public void setPersonalTrainerId(Integer personalTrainerId) {
+        this.personalTrainerId = personalTrainerId;
     }
 
     public String getScheduleAnpai() {
@@ -70,5 +72,13 @@ public class Schedule {
 
     public void setScheduleBeizhu(String scheduleBeizhu) {
         this.scheduleBeizhu = scheduleBeizhu;
+    }
+
+    public String getPersonalTrainerName() {
+        return personalTrainerName;
+    }
+
+    public void setPersonalTrainerName(String personalTrainerName) {
+        this.personalTrainerName = personalTrainerName;
     }
 }

@@ -4,6 +4,7 @@ import com.zhiyou.keepproject.config.RedisTemplateConfig;
 import com.zhiyou.keepproject.entity.Chinese2PinYinUtils;
 import com.zhiyou.keepproject.mapper.UserMapper;
 import com.zhiyou.keepproject.pojo.User;
+import com.zhiyou.keepproject.pojo.personalTrainer;
 import com.zhiyou.keepproject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -19,6 +20,14 @@ public class UserServiceImp implements UserService {
     private RedisTemplate redisTemplate;
     @Autowired
     private UserMapper userMapper;
+
+    @Override
+    public Integer insertIntoUserFId(User user) {
+        userMapper.insert(user);
+        User user1 = userMapper.selectByPhone(user.getPhone());
+        return user1.getId();
+    }
+
     @Override
     public void insertUser(User user) {
         Date time1= new java.sql.Date(new java.util.Date().getTime());
@@ -37,7 +46,13 @@ public class UserServiceImp implements UserService {
 
     @Override
     public void updateUer(User user) {
-    userMapper.updateById(user);
+        String s = Chinese2PinYinUtils.trans2PinYin(user.getName());
+        user.setUserAccount(s);
+        user.setUserPassword(s);
+
+
+
+        userMapper.updateById(user);
     }
 
 

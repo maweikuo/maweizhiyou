@@ -29,4 +29,9 @@ public class UserAdminServiceImp implements UserAdminService {
         userAdmin.setUserAdminNumber(Integer.valueOf((int) date.getTime()));
             userAdminMapper.insert(userAdmin);
     }
+
+    @Override
+    public void deleteByUserId(Integer id) {
+        userAdminMapper.deleteByUserId(id);
+    }
 }

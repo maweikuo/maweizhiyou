@@ -4,7 +4,9 @@ import com.zhiyou.keepproject.pojo.User;
 
 import java.util.List;
 
-public interface UserService  {
+public interface UserService{
+    //添加会员并返回该条数据id
+    Integer insertIntoUserFId(User user);
     //添加会员
     public void insertUser(User user);
     //删除会员

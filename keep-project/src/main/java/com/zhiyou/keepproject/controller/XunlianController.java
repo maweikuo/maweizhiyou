@@ -17,7 +17,6 @@ public class XunlianController {
     //通过id查询训练记录
     @RequestMapping(value = "qq")
     public List<Xunlian> m22(Integer id){
-        System.out.println(id);
         return xunlianService.selectById(id);
     }
     //给会员训练添加记录

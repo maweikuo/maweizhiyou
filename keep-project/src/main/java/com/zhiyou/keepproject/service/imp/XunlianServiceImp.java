@@ -17,7 +17,7 @@ public class XunlianServiceImp implements XunlianService {
     public void insertXunlian(Xunlian xunlian) {
         Date date = new Date();
         xunlian.setXunlianNumber(Integer.valueOf((int) date.getTime()));
-        xunlian.setXunlianTime(xunlian.getXunlianTime()+"分钟");
+        xunlian.setXunlianTime(xunlian.getXunlianTime());
         xunlianMapper.insert(xunlian);
     }
 
