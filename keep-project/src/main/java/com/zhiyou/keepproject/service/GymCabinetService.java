@@ -12,4 +12,6 @@ public interface GymCabinetService  {
     void inserGymCabinet(gymCabinet gymCabinet);
     //删除实体柜子
     void deleteGymCabinet(Integer id);
+    //查询空闲的柜子
+    List<gymCabinet> selectAllByStatic();
 }

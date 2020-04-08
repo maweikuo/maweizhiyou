@@ -1,6 +1,8 @@
 package com.zhiyou.keepproject.service.imp;
 
+import com.zhiyou.keepproject.mapper.UserLeagueClassMapper;
 import com.zhiyou.keepproject.mapper.leagueClassMapper;
+import com.zhiyou.keepproject.pojo.UserLeagueClass;
 import com.zhiyou.keepproject.pojo.leagueClass;
 import com.zhiyou.keepproject.service.leagueClassService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +14,9 @@ import java.util.List;
 public class leagueClassServiceImp implements leagueClassService {
     @Autowired
     private leagueClassMapper leagueClassMapper;
-    @Override
+    @Autowired
+    private UserLeagueClassMapper userleagueClassmapper;
+     @Override
     public List<leagueClass> selectAllleagueClass() {
         return leagueClassMapper.selectAll();
     }
@@ -37,5 +41,6 @@ public class leagueClassServiceImp implements leagueClassService {
         Date date = new Date();
         leagueClass.setLeagueClassNumber(Integer.valueOf((int) date.getTime()));
         leagueClassMapper.insert(leagueClass);
+
     }
 }

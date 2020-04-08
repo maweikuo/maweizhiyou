@@ -67,6 +67,14 @@
                             },
                             success:function () {
                                 //添加成功后跳转user修改页面补全信息
+                                //添加完会员卡之后删除潜客信息
+                                $.ajax({
+                                    type:"post",
+                                    url:"/youkeInto/delete",
+                                    data:{
+                                        id:$(s1).val()
+                                    }
+                                })
                                 alert("添加成功请补全会员信息")
                                 window.location.href="/user/userUpdate.html?id="+result1
                             }

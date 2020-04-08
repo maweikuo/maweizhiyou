@@ -1,6 +1,8 @@
 package com.zhiyou.keepproject.service.imp;
 
 import com.zhiyou.keepproject.mapper.UserAdminMapper;
+import com.zhiyou.keepproject.mapper.UserMapper;
+import com.zhiyou.keepproject.pojo.User;
 import com.zhiyou.keepproject.pojo.UserAdmin;
 import com.zhiyou.keepproject.service.UserAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,8 @@ public class UserAdminServiceImp implements UserAdminService {
 
     @Autowired
     private UserAdminMapper userAdminMapper;
+    @Autowired
+    private UserMapper userMapper;
     @Override
     public List<UserAdmin> selectAll() {
         return userAdminMapper.selectAll();
@@ -20,6 +24,8 @@ public class UserAdminServiceImp implements UserAdminService {
 
     @Override
     public void deleteById(Integer id) {
+        UserAdmin userAdmin = userAdminMapper.selectById(id);
+        userMapper.deleteById(userAdmin.getUserId());
         userAdminMapper.deleteById(id);
     }
 

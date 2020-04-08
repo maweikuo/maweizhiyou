@@ -57,7 +57,6 @@ public class personalTrainerController {
         p.setPersonalTrainerTime(personalTrainerTime);
         p.setPersonalTrainerStatic(personalTrainerStatic);
         personalTrainerService.updatepersonalTrainer(p);
-
     }
     //添加教练
     @RequestMapping(value = "insert")
@@ -101,7 +100,7 @@ public class personalTrainerController {
         p.setPersonalTrainerTime(personalTrainerTime);
         p.setPersonalTrainerStatic(personalTrainerStatic);
         personalTrainerService.insertpersonalTrainer(p);
-
+        System.out.println(p);
         return "添加失败，请重试!";
     }
 

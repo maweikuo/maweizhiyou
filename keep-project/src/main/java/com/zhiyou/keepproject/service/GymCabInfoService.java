@@ -11,4 +11,7 @@ public interface GymCabInfoService {
     void deleteGymCabInfo(Integer id);
     //查询租柜
     List<GymCabInfo> selectAll();
+    //通过租柜id删除租柜信息
+    void deleteByNetId(Integer id);
+
 }

@@ -1,6 +1,7 @@
 package com.zhiyou.keepproject.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.zhiyou.keepproject.pojo.AdminLogin;
 import com.zhiyou.keepproject.pojo.UserAdmin;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
@@ -16,4 +17,7 @@ public interface UserAdminMapper extends BaseMapper<com.zhiyou.keepproject.pojo.
     //通过会员id删除
     @Delete(value = "delete from user_admin where user_id=#{id}")
     void deleteByUserId(Integer id);
+    //通过会员卡id查询
+    @Select(value = "SELECT id,user_admin_number,user_id,start_time,end_time,balance,user_admin_static FROM user_admin WHERE id=#{id}")
+    UserAdmin selectById(Integer id);
 }

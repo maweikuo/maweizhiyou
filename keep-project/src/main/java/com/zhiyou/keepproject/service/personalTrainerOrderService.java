@@ -22,4 +22,5 @@ public interface personalTrainerOrderService {
     personalTrainerOrder selectByOrderId(Integer id);
     //通过教练id添加会员（修改）
     void updateBypId(personalTrainerOrder personalTrainerOrder);
+
 }

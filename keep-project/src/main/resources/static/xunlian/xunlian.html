@@ -47,6 +47,10 @@
     var a=   $.cookie("huiyuan");
     if(a != 0 && a != undefined)
     {
+
+        var  $a1=$("<a ></a>").text("添加");
+        $a1.attr("href","/xunlian/xunlianAdd.html");
+        $(table1).append($a1);
         $.ajax({
             async : true,
             type:"get",
@@ -75,9 +79,7 @@
                 });
 
                 //------------------------
-                var  $a1=$("<a ></a>").text("添加");
-                $a1.attr("href","/xunlian/xunlianAdd.html");
-                $(table1).append($a1);
+
                 var $tr1=$("<tr></tr>");
                 var $td1=$("<td></td>").text("编号");
                 var $td2=$("<td></td>").text("设备名称");

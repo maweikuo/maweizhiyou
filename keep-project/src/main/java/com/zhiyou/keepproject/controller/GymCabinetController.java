@@ -21,10 +21,14 @@ public class GymCabinetController {
     public List<gymCabinet> m1(){
         return gymCabinetService.selectAll();
     }
+    //查询所有空闲租柜
+    @GetMapping(value = "gymsk")
+    public List<gymCabinet> m2(){
+        return gymCabinetService.selectAllByStatic();
+    }
     //添加租柜
     @RequestMapping("add")
     public void m2(gymCabinet gymCabinet){
-        System.out.println(gymCabinet);
         gymCabinetService.inserGymCabinet(gymCabinet);
     }
     //删除租柜

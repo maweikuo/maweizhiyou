@@ -4,6 +4,8 @@ import com.zhiyou.keepproject.entity.ResponseData;
 import com.zhiyou.keepproject.pojo.YoukeInto;
 import com.zhiyou.keepproject.service.YoukeIntoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.Mapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,9 +25,10 @@ public class YoukeIntoController {
        return youkeIntoService.selectYoukeInto();
     }
     //删除游客
-    @RequestMapping(value = "delete")
+    @PostMapping(value = "delete")
     public void m3(Integer id)
     {
+        System.out.println(id);
         youkeIntoService.deleteYouke(id);
     }
     //通过id查询游客

@@ -58,6 +58,25 @@
                     $($tr2).append($td11);
                     $($tr2).append($td22);
                     $($tr2).append($a33)
+                    //通过会员id查询数据
+                    $.ajax({
+                        async:false,
+                        type:"get",
+                        url:"/user/selectById",
+                        data:{
+                            id:pord.userId
+                        },
+                        success:function (result) {
+                            console.log(result)
+                            var $uu1=$("<td></td>").text(result.name);
+                            var $uu2=$("<td></td>").text(result.phone);
+                            $($tr2).append($uu1)
+                            $($tr2).append($uu2)
+                        }
+
+                    })
+
+
                     $(table1).append($tr2);
 
                 }
